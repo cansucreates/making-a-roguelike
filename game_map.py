@@ -7,9 +7,9 @@ class GameMap:
     def __init__(self, width: int, height: int):
         self.width, self.height = width, height
         # create a 2D array of tiles
-        self.tiles = np.full((width, height), fill_value=tile_types.floor, order="F")
-        # set the first 3 columns in the middle of the map to be walls
-        self.tiles[30:33, 22] = tile_types.wall
+        # fill the entire map with wall tiles
+        self.tiles = np.full((width, height), fill_value=tile_types.wall, order="F")
+        
 
     # check if a pair of coordinates is within the bounds of the map
     def in_bounds(self, x:int, y:int) -> bool:
